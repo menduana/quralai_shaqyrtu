@@ -330,11 +330,26 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // Слайдер
-        const swiper = new Swiper(".mySwiper", {
-            effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
-            coverflowEffect: { rotate: 20, stretch: 0, depth: 100, modifier: 1, slideShadows: false },
-            loop: true,
-        });
+       const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+    },
+    loop: true,
+    // ДОБАВЬТЕ ЭТИ СТРОКИ СЮДА:
+    autoplay: {
+        delay: 4000, // Интервал 4 секунды
+        disableOnInteraction: false, // Автопрокрутка не выключится, если гость потрогает слайдер
+    },
+    speed: 800, // Скорость анимации перехода
+});
 
         // Таймер
         const targetDate = new Date("July 24, 2026 19:00:00").getTime();
