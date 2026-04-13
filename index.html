@@ -36,7 +36,7 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 10000; /* Самый верхний слой */
+            z-index: 10000; 
             cursor: pointer;
             font-size: 24px;
         }
@@ -72,8 +72,8 @@
             margin-left: -50vw;
             margin-right: -50vw;
             line-height: 0;
-            z-index: 1; /* Оставляем на фоне */
-            overflow: visible; /* Чтобы лепестки пролетали сквозь */
+            z-index: 1; 
+            overflow: visible; 
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -125,12 +125,37 @@
         .timer-item span { display: block; font-size: 18px; font-weight: bold; color: var(--gold); }
         
         .btn {
+            -webkit-appearance: none;
+    appearance: none;
             display: inline-block; padding: 12px 25px; background: var(--gold);
             color: white; text-decoration: none; border-radius: 30px; margin-top: 15px;
             border: none; cursor: pointer;
         }
 
-        input, select { width: 100%; max-width: 300px; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; }
+       input, select {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white; /* Принудительно белый фон */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; /* Важно: предотвращает авто-зум на iPhone */
+
+    /* Убираем стандартный дизайн телефона */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Добавляем свою стрелочку, так как appearance:none её удалит */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23bca07d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+
 
         /* Бабочки */
         .butterfly-container { height: 80px; position: relative; overflow: hidden; }
