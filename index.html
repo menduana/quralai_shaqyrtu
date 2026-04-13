@@ -228,6 +228,43 @@
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+        /* --- СТИЛИ ДЛЯ ВАШЕГО НОМЕРА (ФУТЕР) --- */
+.developer-footer {
+    padding: 30px 20px;
+    text-align: center;
+    background: #fdf3eb; /* Нежный фон, как у таймера */
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+}
+
+.developer-footer p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1.5px solid var(--gold);
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    background: var(--gold);
+    color: white;
+}
+
+.whatsapp-icon {
+    width: 20px;
+    margin-right: 8px;
+}
     </style>
 </head>
 <body>
@@ -427,5 +464,12 @@ document.getElementById("tgForm").addEventListener("submit", function(e) {
     });
 });
     </script>
+   <footer class="developer-footer">
+    <p>Осындай шақыруларға тапсырыс беру:</p>
+    <a href="https://wa.me/77026520740" target="_blank" class="whatsapp-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WA">
+        +7 702 652 07 40
+    </a>
+</footer>
 </body>
 </html>
